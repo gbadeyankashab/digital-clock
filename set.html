@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #f1f1f1;
+    }
+    h1{
+      text-align: center;
+    }
+    #interface{
+      background-color: black;
+      color: red;
+      width: 230px;
+      margin-left: 390px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-top: 200px;
+      }
+  </style>
+</head>
+<body>
+  <h1>DIGITAL CLOCK</h1>
+  <div id="time-display"></div>
+  <script>
+//     let c = 1;
+// let timer = setInterval(function(){
+//   console.log(c++);
+//   if (c == 21) {
+//   clearInterval(timer)
+// }
+// },1000)
+let timeDisplay = document.getElementById('time-display');
+
+let date = new Date();
+let Seconds= date.getSeconds();
+let Minutes= date.getMinutes();
+let Hours=date.getMinutes();
+console.log(date.getHours())
+setInterval(function(){
+timeDisplay.innerHTML=`<h1 id="interface">${date.getHours()} : ${Minutes} <sub>${Seconds++}</sub></h1>`
+ if (Seconds==60){
+  Minutes++
+  Seconds=1
+ }
+ if (Minutes==60) {
+  Hours++
+  Minutes=0
+ }
+},1000)
+// let time = setInterval(function(){
+//   if(Seconds==60){
+//     clearInterval(time)
+//   }
+//   console.log(Seconds++)
+// },1000)
+  </script>
+</body>
+</html>
